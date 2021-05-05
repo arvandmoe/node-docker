@@ -5,6 +5,7 @@ const { MONGO_USER, MONGO_PASSWORD,MONGO_IP,MONGO_PORT } = require("./config/con
 const app = express();
 
 const mongoURL = `mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_IP}:${MONGO_PORT}/?authSource=admin`;
+
 mongoose
   .connect(mongoURL, {
       useNewUrlParser:true,
