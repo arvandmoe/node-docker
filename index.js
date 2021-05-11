@@ -20,8 +20,8 @@ let redisClient = redis.createClient({
 
 const app = express();
 
-const postRouter = require("./routes/postRoutes");
-const userRouter = require("./routes/userRoutes");
+const postRouter = require("./src/routes/postRoutes");
+const userRouter = require("./src/routes/userRoutes");
 
 const mongoURL = `mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_IP}:${MONGO_PORT}/?authSource=admin`;
 
