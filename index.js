@@ -11,7 +11,7 @@ const {
   SESSION_SECRET,
   REDIS_URL,
   REDIS_PORT,
-} = require("./config/config");
+} = require("./src/config/config");
 
 let redisClient = redis.createClient({
   host: REDIS_URL,
@@ -34,9 +34,11 @@ mongoose
   .then(() => console.log("Connected successfully!"))
   .catch((e) => console.log(e));
 
+app.enable("trust proxy");
+
 app.use(
   session({
-    store: new RedisStore({client: redisClient}),
+    store: new RedisStore({ client: redisClient }),
     secret: SESSION_SECRET,
     cookie: {
       secure: false,
@@ -50,7 +52,7 @@ app.use(
 
 app.use(express.json());
 
-app.get("/", (req, res) => {
+app.get("/api/v1", (req, res) => {
   res.send("<h2> Hi there!!!</h2>");
 });
 
