@@ -14,9 +14,6 @@ services:
             - mongo    
     mongo: 
         image: mongo
-        environment: 
-            - MONGO_INITDB_ROOT_USERNAME=mdkhaki
-            - MONGO_INITDB_ROOT_PASSWORD=example 
         volumes: 
             - mongo-db:/data/db  
     redis:
