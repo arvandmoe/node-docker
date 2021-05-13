@@ -9,7 +9,7 @@ services:
             restart_policy:
                 condition: any
             update_config:
-                parallelias: 2
+                Parallelism: 2
                 delay: 15s
 
         build: 
